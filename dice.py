@@ -30,4 +30,4 @@ def base_converter_dice(num, base):
             break;
     return x
 
-print(gen_dice(10, 5))
+print(gen_dice(6, 2))
