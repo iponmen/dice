@@ -3,9 +3,9 @@ def gen_dice(sides, num):
     # by numbering all the possible dice combanations just converted it to base 6 for example to make all combonations 
     # of base 6 numbers like how 1-99 is all the combonations of 2 "10-sided" values 
     grid = range(sides**num)
+    add_1_to_all = lambda i: list(map(lambda j:j+1,i))
     grid = list(map(lambda i: base_converter_dice(i,sides), grid))
     grid = list(map(lambda i: size_consintency(num,i), grid))
-    add_1_to_all = lambda i: list(map(lambda j:j+1,i))
     grid = list(map(lambda i: add_1_to_all(i), grid))
     # return list(map(lambda i: list(map(lambda j:j+1, size_consintency( num,base_converter_dice(i,sides) ))), range(sides**num)))
     return grid
