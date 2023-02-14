@@ -27,7 +27,22 @@ def base_converter_dice(num, base):
         x.insert(0, num % base)
         num = num//base
         if(num == 0):
-            break;
+            break
     return x
 
+def check_sucsess_rate(dice_table, dc):
+    # (Dice, int) --> float
+    # tells dc (succsess number) rate of this dice table made from the gen_dice funk
+
+    size = len(dice_table)
+    total_passes = 0
+    for i in dice_table:
+        for j in i:
+            if(j >= dc):
+                total_passes += 1
+                break
+    return(total_passes/size)
+
 print(gen_dice(6, 2))
+
+print(check_sucsess_rate(gen_dice(20, 2), 10))
